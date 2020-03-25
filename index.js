@@ -146,6 +146,9 @@ class Instructor extends Lambdasian{
 	grade(student, subject) {
 		return `${student.name} receives a perfect score on ${subject}`;
 	}
+	score(student) {
+		return student.grade = Math.round(Math.random() * 100);
+	}
 }
 
 /*
@@ -168,7 +171,8 @@ class Student extends Lambdasian {
 		super(object),
 		this.previousBackground = object.previousBackground,
 		this.className = object.className,
-		this.favSubjects = object.favSubjects;
+		this.favSubjects = object.favSubjects,
+		this.grade = 50;
 	}
 	listSubjects() {
 		return `Loving ${this.favSubjects[0]}, ${this.favSubjects[1]}, ${this.favSubjects[2]}!`;
@@ -178,6 +182,14 @@ class Student extends Lambdasian {
 	}
 	sprintChallenge(subject) {
 		return `${this.name} has begun sprint challenge on ${subject}`;
+	}
+	graduate() {
+		if (this.grade >= 70) {
+			console.log(`Congratulations, you have received a grade of ${this.grade}%. You have officially graduated from Lambda School!`);
+		}
+		else {
+			console.log(`Sorry, you have received a grade of ${this.grade}%. You need a grade of 70% or higher in order to graduate, so continue to work hard and keep trying.`);
+		}
 	}
 }
 
