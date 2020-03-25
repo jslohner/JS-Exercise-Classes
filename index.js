@@ -48,7 +48,7 @@ class Person {
 	}
 	eat(someFood) {
 		if (this.stomach.length < 10) {
-			this.stomach.push(someFood)
+			this.stomach.push(someFood);
 		}
 	}
 	poop() {
@@ -168,7 +168,7 @@ class Student extends Lambdasian {
 		super(object),
 		this.previousBackground = object.previousBackground,
 		this.className = object.className,
-		this.favSubjects = object.favSubjects
+		this.favSubjects = object.favSubjects;
 	}
 	listSubjects() {
 		return `Loving ${this.favSubjects[0]}, ${this.favSubjects[1]}, ${this.favSubjects[2]}!`;
@@ -194,8 +194,18 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-
+class ProjectManager extends Instructor{
+	constructor(object){
+		super(object),
+		this.gradClassName = object.gradClassName,
+		this.favInstructor = object.favInstructor;
+	}
+	standUp(channel) {
+		return `${this.name} announces to ${channel}, @channel standy times!`;
+	}
+	debugsCode(student, subject) {
+		return `${this.name} debugs ${student.name}'s code on ${subject}`;
+	}
 }
 
 /*
