@@ -9,16 +9,16 @@
 
 // EXAMPLE SOLUTION CODE:
 class Airplane {
-  constructor(name) {
-    this.name = name;
-    this.isFlying = false;
-  }
-  takeOff() {
-    this.isFlying = true;
-  }
-  land() {
-    this.isFlying = false;
-  }
+	constructor(name) {
+		this.name = name;
+		this.isFlying = false;
+	}
+	takeOff() {
+		this.isFlying = true;
+	}
+	land() {
+		this.isFlying = false;
+	}
 }
 
 /*
@@ -41,7 +41,22 @@ class Airplane {
 */
 
 class Person {
-
+	constructor(name, age) {
+		this.name = name,
+		this.age = age,
+		this.stomach = [];
+	}
+	eat(someFood) {
+		if (this.stomach.length < 10) {
+			this.stomach.push(someFood)
+		}
+	}
+	poop() {
+		this.stomach = [];
+	}
+	toString() {
+		return `${this.name}, ${this.age}`;
+	}
 }
 
 /*
